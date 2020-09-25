@@ -3,12 +3,12 @@
 ## Group Members
 | Name | Description |
 | --- | --- |
-| Brandon Ricket | desc here |
-| Jaret Camp | desc here |
-| Rachel Crowley | desc here |
+| Brandon Ricket | Creator |
+| Jaret Camp | Creator |
+| Rachel Crowley | Creator |
 
 ## Users
-- 1 sentence description of users
+Helps high-level students receive the tutoring they need.
 
 ## Key Features
 - 5 key features (bullet pointed or just text)
