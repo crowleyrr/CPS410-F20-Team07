@@ -1,7 +1,11 @@
 # High Level Course Tutor Finder
 
 ## Group Members
-- table with names and some description
+| Name | Description |
+| --- | --- |
+| Brandon Ricket | desc here |
+| Jaret Camp | desc here |
+| Rachel Crowley | desc here |
 
 ## Users
 - 1 sentence description of users
