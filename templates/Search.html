@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="scripts/dropdown.js"></script>
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
@@ -34,8 +35,7 @@
         color:black;
         margin-bottom: 50px;
     }
-    
-   
+
 
     
   </style>
@@ -74,57 +74,43 @@
 <h2>Search for a Tutor</h2>
 <div class="container">    
   <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Find a Tutor</div>
-        <div class="panel-body"><img src="Images/Tutor.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Search for available tutors.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Appointments</div>
-        <div class="panel-body"><a href="Appointment.html">
-          <img src="Images/Appointment.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
-          <div class="panel-footer">View your appointments.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Profile</div>
-        <div class="panel-body"><img src="Images/Profile.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Edit your profile information.</div>
-      </div>
-    </div>
-  </div>
-</div><br>
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Recommend a Tutor</div>
-        <div class="panel-body"><img src="Images/Recommend.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Rate and recommend tutors.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Schedule a Meeting</div>
-        <div class="panel-body"><img src="Images/Calendar.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Schedule your next meeting!</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Courses</div>
-        <div class="panel-body"><img src="Images/Courses.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Edit your current courses.</div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
 
+    <form>
+      <label for="course">Choose a course:</label>
+      <select name="courses" id="courses">
+        <option value="course1">Course 1</option>
+        <option value="course2">Course 2</option>
+        <option value="course3">Course 3</option>
+      </select>
+      <br>
+
+      <label for="course">Choose a Date:</label>
+      <select name="dates" id="dates">
+        <option value="date1">Date 1</option>
+        <option value="date2">Date 2</option>
+        <option value="date3">Date 3</option>
+      </select>
+      <br>
+
+      <label for="time">Choose a time:</label>
+      <select name="times" id="times">
+        <option value="time1">Time 1</option>
+        <option value="time2">Time 2</option>
+        <option value="time3">Time 3</option>
+      </select>
+      <br>
+
+      
+      <input type="button" id="search" value="Search">
+    </form>
+    <br>
+    <label for="Output">Output:</label>
+    <p id="output"></p>
+
+   <br><br>
+  </div>
+
+</div>
 </body>
 </html>
