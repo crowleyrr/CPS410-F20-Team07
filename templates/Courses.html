@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="Scripts/courseFunctions.js"></script>
+
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
@@ -74,55 +76,34 @@
 <h2>Choose your courses</h2>
 <div class="container">    
   <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Find a Tutor</div>
-        <div class="panel-body"><img src="Images/Tutor.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Search for available tutors.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Appointments</div>
-        <div class="panel-body"><a href="Appointment.html">
-          <img src="Images/Appointment.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
-          <div class="panel-footer">View your appointments.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Profile</div>
-        <div class="panel-body"><img src="Images/Profile.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Edit your profile information.</div>
-      </div>
-    </div>
-  </div>
-</div><br>
+    <form>
+      <label for="courseremove">Remove a Course: </label><br>
+      <select name="courses" id="courses">
+        <option value="course1">Course 1</option>
+        <option value="course2">Course 2</option>
+        <option value="course3">Course 3</option>
+      </select>
+      <br><br>
+      <input type="button" id="remove" value="Remove Course">
+      <br>
+      <label for="Output">Output:</label>
+      <p id="removeoutput"></p>
+    </form>
+    <br><br><br>
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Recommend a Tutor</div>
-        <div class="panel-body"><img src="Images/Recommend.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Rate and recommend tutors.</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Schedule a Meeting</div>
-        <div class="panel-body"><img src="Images/Calendar.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Schedule your next meeting!</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">My Courses</div>
-        <div class="panel-body"><img src="Images/Courses.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Edit your current courses.</div>
-      </div>
-    </div>
+    <form>
+      <label for="courseadd">Add a Course: </label><br>
+
+      <label for="courseid">Course ID: </label>
+      <input type="text" id="identifier" name="identifier" maxlength="3"><br>
+
+      <label for="coursenum">Course Number: </label>
+      <input type="number" id="number" name="number" min="0" max="999"><br><br>
+      <input type="button" id="add" value="Add Course">
+      </form>
+      <br>
+      <label for="Output">Output:</label>
+      <p id="addoutput"></p>
   </div>
 </div><br><br>
 
