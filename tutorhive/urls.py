@@ -20,5 +20,5 @@ from users.views import StartingPageView
 urlpatterns = [
     url(r'^hive/', include('users.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', StartingPageView.as_view()),
+    url(r'^$', StartingPageView.as_view(), name="start"),
 ]

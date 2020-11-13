@@ -12,6 +12,5 @@ urlpatterns = [
     url(r'^schedule/$', TemplateView.as_view(template_name="Schedule.html")),
     url(r'^search/$', TemplateView.as_view(template_name="Search.html")),
 
-    url(r'^$', views.index, name='index'),
 
 ]
