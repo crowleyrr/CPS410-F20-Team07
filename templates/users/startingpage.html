@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./../scripts/signup.js"></script>
+
   <style>
 
    /*TEMPLATE FOR HOME PAGE TAKEN FROM: https://www.w3schools.com/bootstrap/bootstrap_templates.asp*/
@@ -26,10 +28,18 @@
     }
 
     h1{
-        text-align: center;
+
+        text-align: left;
         color:white;
-        margin-bottom: 25px%;
+        margin-bottom: 25px;
         font-size: 50px;
+    }
+
+    h2{
+      text-align: left;
+      color:white;
+      margin-bottom: 25px;
+      font-size: 25px;
     }
     .sign-in{
       background-color: transparent;
@@ -49,14 +59,26 @@
       padding-top: 10px;
     }
 
-    .main-header{
-      text-align: left;
-      align: left;
-      padding-bottom: 150px;
-    }
-    .sub-message{
-      padding-bottom: 200px;
-    }
+    .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#1d2b68;
+  color: white;
+  text-align: center;
+}
+
+  .welcome-message{
+    margin-left: 2%;
+    width: 750px;
+    word-wrap: break-word;
+  }
+
+  .signup-form{
+    margin-right: 2%;
+    align-content: right;
+  }
 
   </style>
 </head>
@@ -64,17 +86,43 @@
 
 <div class="container-fluid navbar navbar-inverse">
   <p class="homepage-title navbar-header">Tutor Hive</p>
-  <button type="button" class="sign-in">Sign In</button>
+  <button type="button" class="sign-in" onclick="location.href='./../Sign_In.html'">Sign In</button>
 </div>
 
+<div class="welcome-message">
+<h1 class="main-header">Join the Hive today and commit to bee-ing your best self!</h1>
+<h2 class="sub-message">Interested in becoming a paid tutor? Sign up now!</h2>
+</div>
 
-<div >
-  <div class="container text-center">
-    <h1 class="main-header">Join the Hive today and commit to bee-ing your best self!</h1>
-    <h2 class="sub-message">Interested in becoming a paid tutor? Sign up now!</h2>
-    <p>Bee Your Best Self. </p>
-    <img src="./../Images/Bee.png" alt="Bee" height="100px" width="100px">
-  </div>
+<p id="outputinfo"></p>
+
+<div class="container-fluid" style="float: right; color: grey">
+<div class="signup form">
+  <form action=>
+    <label for="fname">First Name: </label><br>
+    <input type="text" id="fname" value="Enter First Name"></input><br><br>
+    <label for="lname">Last Name: </label><br>
+    <input type="text" id="lname" value="Enter Last Name"></input><br><br>
+    <label for="email">Email: </label><br>
+    <input type="text" id="email" value="Enter Email"></input><br><br>
+    <label for="university">University: </label><br>
+    <input type="text" id="university" value="Enter Your University"></input><br><br>
+    <input type="radio" id="tutor" name="type" value="Tutor">
+    <label for="tutor">Tutor</label><br>
+    <input type="radio" id="student" name="type" value="Student">
+    <label for="student">Student</label><br>
+    <label for="username">Username</label><br>
+    <input type="text" id="username" value="Enter Your Username"><br><br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password" value="password"><br><br>
+    <input type="button" id="signup" value="Sign Up" style="color:black"><br>
+  </form>
+</div>
+</div>
+
+<div class="footer">
+  <p>Bee Your Best Self. </p>
+  <img src="./../Images/Bee.png" alt="Bee" height="100px" width="100px">
 </div>
 
 </body>
