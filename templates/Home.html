@@ -71,7 +71,6 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <!-- <li><button class="nav navbar-nav" id="home-btn">Home</button></li> -->
       <li><button class="nav navbar-nav" id="signout-btn">Sign Out</button></li>
       </ul>
     </div>
@@ -79,34 +78,28 @@
 </nav>
 
 
-<h2>Welcome to the Hive, userName!</h2>
+<h2>Welcome to the Hive!</h2>
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="srch">
         <div class="panel-heading">Find a Tutor</div>
-        <a href="Search.html">
         <div class="panel-body"><img src="Images/Tutor.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
         <div class="panel-footer">Search for available tutors.</div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="appt">
         <div class="panel-heading">My Appointments</div>
         <div class="panel-body">
-          <a href="Appointment.html">
           <img src="Images/Appointment.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
           <div class="panel-footer">View your appointments.</div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="profile">
         <div class="panel-heading">My Profile</div>
-        <a href="Profile.html">
         <div class="panel-body"><img src="Images/Profile.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
         <div class="panel-footer">Edit your profile information.</div>
       </div>
     </div>
@@ -116,29 +109,23 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="rec">
         <div class="panel-heading">Recommend a Tutor</div>
-        <a href="Recommend.html">
         <div class="panel-body"><img src="Images/Recommend.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
         <div class="panel-footer">Rate and recommend tutors.</div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="sched">
         <div class="panel-heading">Schedule a Meeting</div>
-        <a href="Schedule.html">
         <div class="panel-body"><img src="Images/Calendar.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
         <div class="panel-footer">Schedule your next meeting!</div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="panel panel-primary">
+      <div class="panel panel-primary" id="courses">
         <div class="panel-heading">My Courses</div>
-        <a href="Courses.html">
         <div class="panel-body"><img src="Images/Courses.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        </a>
         <div class="panel-footer">Edit your current courses.</div>
       </div>
     </div>
@@ -150,11 +137,32 @@
 
 {% block custom_javascript %}
 <script type="text/javascript">
-  // $(document).on("click", "#home-btn", function() {
-  //   document.location.href = '/hive/home';
-  // });
   $(document).on("click", "#signout-btn", function() {
     document.location.href = '/';
+  });
+
+  $(document).on("click", "#rec", function() {
+    document.location.href = '/hive/recommend/';
+  });
+
+  $(document).on("click", "#sched", function() {
+    document.location.href = '/hive/schedule/';
+  });
+
+  $(document).on("click", "#courses", function() {
+    document.location.href = '/hive/courses/';
+  });
+
+  $(document).on("click", "#profile", function() {
+    document.location.href = '/hive/profile/';
+  });
+
+  $(document).on("click", "#appt", function() {
+    document.location.href = '/hive/appointments/';
+  });
+
+  $(document).on("click", "#srch", function() {
+    document.location.href = '/hive/search/';
   });
 </script>
 {% endblock %}

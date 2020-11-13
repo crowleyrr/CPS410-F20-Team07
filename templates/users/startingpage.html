@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
   <title>Tutor Hive</title>
   <meta charset="utf-8">
@@ -78,6 +80,11 @@
   .signup-form{
     margin-right: 2%;
     align-content: right;
+    margin-top: -170px;
+  }
+  #signup-btn{
+    float: left;
+    color: black;
   }
 
   </style>
@@ -86,7 +93,7 @@
 
 <div class="container-fluid navbar navbar-inverse">
   <p class="homepage-title navbar-header">Tutor Hive</p>
-  <button type="button" class="sign-in" onclick="location.href='./../Sign_In.html'">Sign In</button>
+  <button type="button" class="sign-in" onclick="location.href='/hive/signin/'">Sign In</button>
 </div>
 
 <div class="welcome-message">
@@ -96,8 +103,8 @@
 
 <p id="outputinfo"></p>
 
-<div class="container-fluid" style="float: right; color: grey">
-<div class="signup form">
+<div class="container-fluid" style="float: right; color: grey;">
+<div class="signup-form">
   <form action=>
     <label for="fname">First Name: </label><br>
     <input type="text" id="fname" value="Enter First Name"></input><br><br>
@@ -115,8 +122,10 @@
     <input type="text" id="username" value="Enter Your Username"><br><br>
     <label for="password">Password</label><br>
     <input type="password" id="password" value="password"><br><br>
-    <input type="button" id="signup" value="Sign Up" style="color:black"><br>
   </form>
+  <div>
+    <button id="signup-btn">Sign Up</button>
+  </div>
 </div>
 </div>
 
@@ -127,3 +136,42 @@
 
 </body>
 </html>
+
+{% block custom_javascript %}
+<script type="text/javascript">
+/*When the user clicks Signup, display the information that they input*/
+var displayData = function() {
+
+  var fname = document.getElementById("fname").value;
+  var lname = document.getElementById("lname").value;
+  var email = document.getElementById("email").value;
+  var university = document.getElementById("university").value;
+  var type;
+  if(document.getElementById("student").checked){
+	  type="student";
+  }
+  else if(document.getElementById("tutor").checked){
+	  type="tutor";
+  }
+  else{
+	  alert("You must indicate whether you are a student or a tutor in order to sign up.");
+  }
+
+  var username = document.getElementById("username").value;
+  var pass = "Super secret password!"
+
+	alert("First name:" + fname
+	 + "\nLast name: " + lname
+	 + "\nEmail: " + email
+	 + "\nUniversity: " + university
+	 + "\nType: " + type
+	 + "\nUsername: " + username
+	 + "\nPassword: " + pass);
+}
+
+
+window.onload = function(){
+  document.getElementById("signup-btn").onclick = displayData;
+}
+</script>
+{% endblock %}
