@@ -1,9 +1,6 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 
 <head>
   <title>Tutor Hive</title>
@@ -38,7 +35,18 @@
         color:black;
         margin-bottom: 50px;
     }
-
+    #home-btn{
+      background-color: transparent;
+      color: white;
+      border: none;
+      margin-left: 6px;
+    }
+    #signout-btn{
+      background-color: transparent;
+      color: white;
+      border: none;
+      margin-left: 6px;
+    }
 
 
 
@@ -65,10 +73,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="Home.html">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./users/startingpage.html"> Sign Out</a></li>
+      <li><button class="nav navbar-nav" id="home-btn">Home</button></li>
+      <li><button class="nav navbar-nav" id="signout-btn">Sign Out</button></li>
       </ul>
     </div>
   </div>
@@ -111,3 +117,46 @@
 
 </body>
 </html>
+
+{% block custom_javascript %}
+<script type="text/javascript">
+  $(document).on("click", "#home-btn", function() {
+    document.location.href = '/hive/home';
+  });
+  $(document).on("click", "#signout-btn", function() {
+    document.location.href = '/';
+  });
+  $(document).on("click", "#submit-btn", function() {
+    window.alert("Thank you for your recommendation.");
+    document.location.href = '/hive/home';
+  });
+
+  var displayAddData = function() {
+
+    var courseID = document.getElementById("identifier").value;
+    var courseNum = document.getElementById("number").value;
+
+    if(courseNum <= 999 && courseNum >= 0){
+    document.getElementById("addoutput").innerHTML = "Course to add to Student Object: "
+    + courseID
+    + " " + courseNum;
+    }
+
+    else{
+  	document.getElementById("addoutput").innerHTML = "Invalid Course Number, must be between 000-999";
+    }
+  }
+
+  var displayRemoveData = function() {
+    var course = document.getElementById("courses").value;
+
+    document.getElementById("removeoutput").innerHTML = "Course to remove from Student Object: "
+    + course;
+  }
+
+  window.onload = function(){
+    document.getElementById("add").onclick = displayAddData;
+    document.getElementById("remove").onclick = displayRemoveData;
+  }
+</script>
+{% endblock %}

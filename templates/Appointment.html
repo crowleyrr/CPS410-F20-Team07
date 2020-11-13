@@ -1,8 +1,7 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
   <title>Tutor Hive</title>
   <meta charset="utf-8">
@@ -11,20 +10,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
       margin-bottom: 50px;
       border-radius: 0;
     }
-    
-    /* Remove the jumbotron's default bottom margin */ 
+
+    /* Remove the jumbotron's default bottom margin */
      .jumbotron {
       background-color: #1d2b68;
       color: #ffffff;
       height: 300px;
       margin-bottom: 0;
     }
-   
+
     body{
         background-color: aqua;
     }
@@ -34,17 +33,28 @@
         color:black;
         margin-bottom: 50px;
     }
-    
-   
+    #home-btn{
+      background-color: transparent;
+      color: white;
+      border: none;
+      margin-left: 6px;
+    }
+    #signout-btn{
+      background-color: transparent;
+      color: white;
+      border: none;
+      margin-left: 6px;
+    }
 
-    
+
+
   </style>
 </head>
 <body>
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Tutor Hive</h1>      
+    <h1>Tutor Hive</h1>
     <p>Bee Your Best Self. </p>
     <img src="Images/Bee.png" alt="Bee" height="100px" width="100px">
   </div>
@@ -56,15 +66,13 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="Home.html">Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="./users/startingpage.html"> Sign Out</a></li>
+      <li><button class="nav navbar-nav" id="home-btn">Home</button></li>
+      <li><button class="nav navbar-nav" id="signout-btn">Sign Out</button></li>
       </ul>
     </div>
   </div>
@@ -72,10 +80,10 @@
 
 
 <h2>Appointments</h2>
-<div class="container">    
+<div class="container">
   <div class="row">
 
-    <div class="col-sm-4"> 
+    <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">My Appointments</div>
         <div class="panel-body"><a href="Appointment.html">
@@ -89,3 +97,19 @@
 
 </body>
 </html>
+
+
+{% block custom_javascript %}
+<script type="text/javascript">
+  $(document).on("click", "#home-btn", function() {
+    document.location.href = '/hive/home';
+  });
+  $(document).on("click", "#signout-btn", function() {
+    document.location.href = '/';
+  });
+  $(document).on("click", "#submit-btn", function() {
+    window.alert("Thank you for your recommendation.");
+    document.location.href = '/hive/home';
+  });
+</script>
+{% endblock %}
