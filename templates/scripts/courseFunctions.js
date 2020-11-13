@@ -25,5 +25,4 @@ var displayRemoveData = function() {
 window.onload = function(){
   document.getElementById("add").onclick = displayAddData;
   document.getElementById("remove").onclick = displayRemoveData;
-  
 }
