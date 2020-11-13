@@ -1,10 +1,10 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
 from . import views
-# from users.views import HomePageView
+from users.views import HomePageView
 
 urlpatterns = [
-    # url(r'^home/$', HomePageView.as_view()),
+    url(r'^home/$', HomePageView.as_view(), name='home'),
     url(r'^appointments/$', TemplateView.as_view(template_name="Appointment.html")),
     url(r'^courses/$', TemplateView.as_view(template_name="Courses.html")),
     url(r'^profile/$', TemplateView.as_view(template_name="Profile.html")),
