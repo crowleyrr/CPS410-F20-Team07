@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
-# from users.views import DashBoard
+from users.views import StartingPageView
 
 urlpatterns = [
     url(r'^hive/', include('users.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', StartingPageView.as_view()),
 ]
