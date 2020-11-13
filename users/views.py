@@ -7,7 +7,8 @@ from .models import Student
 # Create your views here.
 class StartingPageView(TemplateView):
     """
-    View for the page the user sees upon reaching the site before logging in.
+    This view renders the template that is the page the user sees upon arriving
+    to the site.
     """
     template_name = 'users/startingpage.html'
     # student = Student.objects.filter().first()
@@ -16,12 +17,11 @@ class StartingPageView(TemplateView):
 
 class HomePageView(TemplateView):
     """
-    View for the page the user sees upon reaching the site before logging in.
+    This view renders the template for the home page. The user must be logged in
+    to see this page.  This is the main page of the site from which the user can
+    navigate to other pages.
     """
     template_name = 'Home.html'
     # student = Student.objects.filter().first()
     # context = {'student_name': student.first_name}
     # # return render(request, template_name, {})
-
-def index(request):
-    return HttpResponse("MADE IT TO USER INDEX.")

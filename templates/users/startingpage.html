@@ -172,6 +172,12 @@ var displayData = function() {
 
 window.onload = function(){
   document.getElementById("signup-btn").onclick = displayData;
+
+  $(document).on("click", "#signup-btn", function() {
+    // displayData;
+    document.location.href = '/hive/home/';
+    window.alert("Congrats! Your account has been created.");
+  });
 }
 </script>
 {% endblock %}
